@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'
 import Swal from 'sweetalert2';
 import {Observable} from 'rxjs'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heroe',
@@ -12,9 +13,21 @@ import {Observable} from 'rxjs'
 })
 export class HeroeComponent implements OnInit {
   heroe:HeroeModel=new HeroeModel();
-  constructor(private heroeService:HeroesServiceService) { }
+  constructor(private heroeService:HeroesServiceService,
+              private actvatedRouter:ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id:any=this.actvatedRouter.snapshot.paramMap.get('id');
+    console.log(id)
+    if(id!=='nuevo'){
+      this.heroeService.getHero(id).subscribe(
+        (response:any)=>{
+          console.log(response)
+          this.heroe=response
+          this.heroe.id=id
+        }
+      )
+    }
   }
   save(form:NgForm){
     if(form.invalid){
