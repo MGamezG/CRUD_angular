@@ -1,1 +1,55 @@
-<p>heroes works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Listado de Héroes</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-end">
+      <button class="btn btn-primary" routerLink="/heroe/nuevo">
+        <i class="fa fa-plus"></i>
+        agregar
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table caption-top">
+        <caption>List of users</caption>
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Poder</th>
+            <th scope="col">Vivo</th>
+            <th scope="col">Tools</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 text-center">
+      <div class="alert alert-primary" role="alert">
+        <h4 class="alert-heading">Cargando</h4>
+        <p><i class="fa fa-sync-alt fa-spin fa-2x"></i></p>
+        <p class="mb-0"> espere por faovr...</p>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">No hay registros</h4>
+        <p><i class="fa fa-exclamation fa-2x"></i></p>
+      </div>
+    </div>
+  </div>
+</div>
