@@ -14,11 +14,18 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getheroes()
+    this.cargando=true;
+    this.heroesService.getHeroes().subscribe(
+      (response:any)=>{
+        this.heroesList=response;
+        this.cargando=false
+      }
+    )
   }
   heroesList:any[]=[]
-
+  cargando=false;
   getheroes(){
-    this.heroesService.getHeros().subscribe(
+    this.heroesService.getHeroes().subscribe(
       (data:any)=>{
         this.heroesList=data
         console.log(this.heroesList,'lista')
@@ -44,5 +51,7 @@ export class HeroesComponent implements OnInit {
     );
 
   }
+
+
 
 }

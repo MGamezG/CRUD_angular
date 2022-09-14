@@ -1,7 +1,7 @@
 import { HeroeModel } from './../../Models/heroe.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {map} from 'rxjs/operators'
+import {map,delay} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -41,13 +41,14 @@ export class HeroesServiceService {
    * obtener la lista de heroes
    * @returns
    */
-  getHeros(){
+  getHeroes(){
     return this.http.get(`${this.url}/heroes.json`).pipe(
       map(
         (response:any)=>{
          return this.createArray(response)
         }
-      )
+      ),
+      delay(1500)
     );
 
   }
