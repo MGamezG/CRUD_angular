@@ -1,1 +1,48 @@
-<p>heroe works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Heroe <small>Nombre del Heroe</small></h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-end">
+      <button class="btn btn-danger" routerLink="/heroes">
+        <i class="fa fa-arrow-left"></i>
+        Regresar
+      </button>
+    </div>
+  </div>
+  <div class="row animate__animated animate__fadeIn animate__faster">
+    <div class="col-12">
+
+      <form action="">
+        <div class="form-group">
+          <label> fireBase Id</label>
+          <input type="text" class="form-control" disabled="disable" placeholder="FireBase Id">
+          <small class="form-text text-muted"> Este campo es auto generado</small>
+        </div>
+        <div class="form-group">
+          <label> Nombre</label>
+          <input type="text" class="form-control" placeholder="Nombre del Heroe" required>
+        </div>
+        <div class="form-group">
+          <label>Poder</label>
+          <input type="text" class="form-control" placeholder="Poder del Heroe">
+        </div>
+        <div class="form-group">
+          <label>Estado</label>
+          <br>
+          <div class="d-flex justify-content-evenly col-4">
+            <button class="btn btn-outline-success"><i class="fa fa-smile-wink"></i> vivo</button>
+          <button class="btn btn-outline-danger"><i class="fa fa-dizzy"></i> Muerto</button>
+          </div>
+        </div>
+        <div class="form-group mt-5 text-end">
+          <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Guardar</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
