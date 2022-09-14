@@ -1,3 +1,4 @@
+import { HeroesServiceService } from './../../services/heroes/heroes-service.service';
 import { HeroeModel } from './../../Models/heroe.model';
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'
@@ -9,7 +10,7 @@ import {NgForm} from '@angular/forms'
 })
 export class HeroeComponent implements OnInit {
   heroe:HeroeModel=new HeroeModel();
-  constructor() { }
+  constructor(private heroeService:HeroesServiceService) { }
 
   ngOnInit(): void {
   }
@@ -17,9 +18,24 @@ export class HeroeComponent implements OnInit {
     if(form.invalid){
       console.log('no valido')
       return;
+    }
+
+    if(this.heroe.id){
+      this.heroeService.upDateHero(this.heroe).subscribe(
+        (response:any)=>{
+          console.log(response)
+
+        }
+      )
     }else{
       console.log(form)
       console.log(this.heroe)
+      this.heroeService.createHero(this.heroe).subscribe(
+        (response:any)=>{
+          console.log(response)
+          this.heroe=response
+        }
+      )
     }
 
   }
