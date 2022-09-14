@@ -75,4 +75,13 @@ export class HeroesServiceService {
   getHero(id:string){
     return this.http.get(`${this.url}/heroes/${id}.json`)
   }
+
+  /**
+   * borrar un registro
+   * @param id
+   * @returns
+   */
+  deleteHero(id:string){
+    return this.http.delete(`${this.url}/heroes/${id}.json`)
+  }
 }

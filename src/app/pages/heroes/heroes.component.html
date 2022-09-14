@@ -37,7 +37,7 @@
             <td>
               <div class="d-flex justify-content-evenly">
                 <button class="btn btn-outline-warning" [routerLink]="['/heroe',heroe.id]"><i class="fa fa-pen"></i> Editar</button>
-                <button class="btn btn-outline-danger" [routerLink]="['/heroe',heroe.id]"><i class="fa fa-trash"></i> Borrar</button>
+                <button class="btn btn-outline-danger" (click)="deleteHero(heroe.id,i)"><i class="fa fa-trash"></i> Borrar</button>
               </div>
             </td>
           </tr>
